@@ -1,0 +1,411 @@
+.player {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 70%;
+    flex-grow: 2;
+    overflow: auto;
+}
+
+.videoContainer {
+    width: 100%;
+    height: 80vh;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+}
+
+.videoTitle {
+    font-size: 34px;
+    font-weight: bold;
+    color: white;
+}
+
+.controlsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+}
+
+.ratingBtns {
+  display: flex;
+  width: 28%;
+  justify-content: space-between;
+}
+
+.videoDescription {
+    padding: 10px 0;
+    color: #555;
+}
+
+.comments {
+    margin-top: 20px;
+}
+
+.commentsBlockTitle {
+    margin: 0 0 10px;
+}
+
+.commentTextarea {
+    width: 40%;
+    height: 60px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.usersComments {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: start;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  border: 1px rgb(196, 196, 196) solid;
+  border-radius: 10px;
+  padding-left: 1%;
+  width: 90%;
+}
+
+.commentUploaderName { 
+  margin-bottom: 0;
+  color: rgb(172, 172, 172);
+}
+
+.textComment {
+  color: white;
+}
+
+.emotionLike, .emotionDislike {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    position: relative;
+    overflow: hidden;
+}
+
+.blobBtnBlob {
+  position: absolute;
+  top: 2px; 
+  width: calc(100% / 4);
+  height: 100%;
+  background: linear-gradient( rgb(155, 16, 152), rgba(255, 150, 31, 1));
+  border-radius: 100%;
+  transform: translate3d(0, 150%, 0) scale(1.7);
+  transition: transform 0.45s;
+}
+
+@supports (filter: url('#goo')) {
+  .blobBtnBlob {
+    transform: translate3d(0, 150%, 0) scale(1.4);
+  }
+}
+
+.blobBtnBlob:nth-child(1) {
+  left: 0%;
+  transition-delay: 0s;
+}
+
+.blobBtnBlob:nth-child(2) {
+  left: 30%; /* (1 * (120% / 4)) */
+  transition-delay: 0.08s;
+}
+
+.blobBtnBlob:nth-child(3) {
+  left: 60%; /* (2 * (120% / 4)) */
+  transition-delay: 0.16s;
+}
+
+.blobBtnBlob:nth-child(4) {
+  left: 90%; /* (3 * (120% / 4)) */
+  transition-delay: 0.24s;
+}
+
+.blobBtn:hover .blobBtnBlob {
+  transform: translateZ(0) scale(1.7);
+}
+
+@supports (filter: url('#goo')) {
+  .blobBtn:hover .blobBtnBlob {
+    transform: translateZ(0) scale(1.4);
+  }
+}
+
+.subscribe {
+    width: 300px;
+    font-family: "Comfortaa", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 15px;
+    font-style: normal;
+    background: linear-gradient(to right, rgb(135, 0, 202), rgb(230, 123, 0));
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: white;
+}
+
+.subscribe:hover {
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+}
+
+.glowOnHover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glowOnHover:before {
+    content: '';
+    background: linear-gradient(45deg, rgb(135, 0, 202),rgb(230, 123, 0),rgb(135, 0, 202),rgb(230, 123, 0),rgb(135, 0, 202),rgb(230, 123, 0),rgb(135, 0, 202),rgb(230, 123, 0));
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glowOnHover:active {
+    color: #000
+}
+
+.glowOnHover:active:after {
+    background: transparent;
+}
+
+.glowOnHover:hover:before {
+    opacity: 1;
+}
+
+.glowOnHover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.blobBtn {
+    z-index: 1;
+    position: relative;
+    padding: 15px 46px;
+    margin-bottom: 10px;
+    margin-top: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 13px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: color 0.5s;
+    cursor: pointer;
+    border-radius: 30px;
+    background-color: gray;
+}
+  
+.blobBtn:before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+  }
+  
+.blobBtn:after {
+    content: "";
+    z-index: -2;
+    position: absolute;
+    left: 3px; /* 2px * 1.5 */
+    top: 3px; /* 2px * 1.5 */
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s 0.2s;
+    border-radius: 30px;
+}
+  
+.blobBtn:hover {
+    color: #FFFFFF;
+    border-radius: 30px;
+}
+  
+.blobBtn:hover:after {
+    transition: all 0.3s;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+}
+  
+.blobBtnInner {
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+  }
+  
+.blobBtnBlobs {
+    position: relative;
+    display: block;
+    height: 100%;
+    filter: url('#goo');
+}
+  
+.blobBtnBlob {
+    position: absolute;
+    top: 2px; /* 2px */
+    width: calc(130% / 4);
+    height: 130%;
+    background:linear-gradient(  rgb(135, 0, 202),rgb(230, 123, 0)) ;
+    border-radius: 100%;
+    transform: translate3d(0, 150%, 0) scale(1.7);
+    transition: transform 0.45s;
+}
+  
+  @supports (filter: url('#goo')) {
+    .blobBtnBlob {
+      transform: translate3d(0, 150%, 0) scale(1.4);
+    }
+  }
+  
+.blobBtnBlob:nth-child(1) {
+    left: 0%;
+    transition-delay: 0s;
+}
+  
+.blobBtnBlob:nth-child(2) {
+    left: 30%; /* (1 * (120% / 4)) */
+    transition-delay: 0.08s;
+}
+  
+.blobBtnBlob:nth-child(3) {
+    left: 60%; /* (2 * (120% / 4)) */
+    transition-delay: 0.16s;
+}
+  
+.blobBtnBlob:nth-child(4) {
+    left: 90%; /* (3 * (120% / 4)) */
+    transition-delay: 0.24s;
+}
+  
+.blobBtn:hover .blobBtnBlob {
+    transform: translateZ(0) scale(1.7);
+}
+  
+@supports (filter: url('#goo')) {
+    .blobBtn:hover .blobBtnBlob {
+      transform: translateZ(0) scale(1.4);
+    }
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+}
+
+.commentsBlockTitle {
+  color: white;
+}
+
+.commentTextarea {
+  background-color: black;
+  width: 98%;
+  padding-top: 0;
+  vertical-align: top;
+  color: white;
+}
+  
+.commentButtonSubmit {   
+	text-decoration: none;
+	color: #6b5770;
+	background-image: linear-gradient(90deg, #fd7f34, #bd155b);
+	display: inline-block;
+	border: 1px solid;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+	box-sizing: border-box;
+	margin: 0 8px 8px 0;
+	outline: none;
+	cursor: pointer;
+  width: 20%;
+  height: 3em;
+  font-size: 1.2em;
+}
+
+.commentButtonSubmit:before { 
+	content: '';
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	background: linear-gradient(90deg, #fd7f34, #bd155b);
+	z-index: -2;
+	transition: .4s;
+  border-radius: 10px;
+}
+
+.commentButtonSubmit:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, #fff, #fff);
+	z-index: -1;
+	transition: .4s;
+	border-radius: 10px;
+ }
+ 
+.commentButtonSubmit:hover {
+	color: #fff;
+	transition: .3s;
+}
+
+.commentButtonSubmit:hover:after {
+	background: linear-gradient(90deg, #fd7f34, #bd155b);
+}
+.commentButtonSubmit:active:after {
+	background: linear-gradient(90deg, #d96d2d, #760f3a);
+}
+.commentButtonSubmit:focus-visible {
+	box-shadow: 0 0 0 3px #fd7f34;
+}

@@ -1,0 +1,262 @@
+.account {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 95%;
+}
+
+.infoBlock {
+    width: 20%;
+    height: 100%;
+    background-color: rgb(66, 66, 66);
+    border-radius: 10px;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7%;
+}
+
+.data {
+    width: 90%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+}
+
+.name {
+    color: white;
+    margin-bottom: 0;
+}
+
+.email {
+    color: rgb(158, 158, 158);
+    margin-top: 0;
+}
+
+.uploadBlock {
+    width: 60%;
+    height: 100%;
+    background-color: rgb(66, 66, 66);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arrow {
+    width: 100%;
+}
+
+.exitButton {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 1%;
+    left: 1%;
+    background-color: rgba(63, 63, 63, 0.8);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 5s;
+    z-index: 10;
+    width: 2%;
+    height: 2%;
+}
+
+.exitButton:hover {
+    background: linear-gradient(to right, rgb(155, 16, 152), rgba(255, 150, 31, 1));
+    background-size: 200% 100%; 
+    animation: gradientAnimation 0.3s forwards;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+.ratedVideos {
+    width: 90%;
+}
+
+.ratedVideosTitle {
+    font-size: 2em;
+    color: rgb(216, 216, 216);
+    margin-bottom: 0;
+}
+
+.videos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    background-color: rgb(77, 77, 77);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    height: 100%;
+    overflow: hidden;
+    margin-top: 50px;
+    transition: border 0.3s ease;
+    border: 4px solid transparent;
+    color:rgb(255, 255, 255);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 0 2px 15px rgb(192, 98, 98);
+    border: 4px solid transparent;
+    background-clip: padding-box;
+    border-radius: 8px;
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(81, 81, 81)), linear-gradient(1deg, rgb(135, 0, 202), rgb(230, 123, 0));
+    background-origin: border-box;
+    background-clip: content-box, border-box; /* Убираем увеличение при наведении */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.cardContent {
+    padding: 15px;
+}
+
+.cardTitle {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.uploadTitle {
+    color: white;
+    width: 98%;
+}
+
+.uploadForm {
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    gap: 3em;
+}
+
+.inlineBlock {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 50%;
+    height: fit-content;
+}
+
+.input {
+    width: 35%;
+    height: 20%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(34, 34, 34, 0.637);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.input::placeholder {
+    color: #b1b1b1;
+}
+
+.textarea {
+    flex-grow: 2;
+    width: 40%;
+    height: 100px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(34, 34, 34, 0.637);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+    margin-top: 1em;
+    resize: none;
+}
+
+.textarea::placeholder {
+    color: #b1b1b1;
+}
+
+.commentButtonSubmit {   
+	text-decoration: none;
+	color: #000000;
+	background-image: linear-gradient(90deg, #fd7f34, #bd155b);
+	display: inline-block;
+	border: 1px solid;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+	box-sizing: border-box;
+	margin: 0 8px 8px 0;
+	outline: none;
+	cursor: pointer;
+    width: 20%;
+    height: 3em;
+    font-size: 1.2em;
+}
+
+.commentButtonSubmit:before { 
+	content: '';
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	background: linear-gradient(90deg, #fd7f34, #bd155b);
+	z-index: -2;
+	transition: .4s;
+  border-radius: 10px;
+}
+
+.commentButtonSubmit:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, #fff, #fff);
+	z-index: -1;
+	transition: .4s;
+	border-radius: 10px;
+ }
+ 
+.commentButtonSubmit:hover {
+	color: #fff;
+	transition: .3s;
+}
+
+.commentButtonSubmit:hover:after {
+	background: linear-gradient(90deg, #fd7f34, #bd155b);
+}
+.commentButtonSubmit:active:after {
+	background: linear-gradient(90deg, #d96d2d, #760f3a);
+}
+.commentButtonSubmit:focus-visible {
+	box-shadow: 0 0 0 3px #fd7f34;
+}

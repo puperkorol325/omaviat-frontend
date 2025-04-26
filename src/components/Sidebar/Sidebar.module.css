@@ -1,0 +1,91 @@
+.sidebar  {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    background: linear-gradient(1deg, rgb(135, 0, 202), rgb(230, 123, 0));
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    background: rgb(32, 32, 32);
+}
+
+.title {
+    font-size: 2.3em;
+    background: linear-gradient(1deg, rgb(135, 0, 202), rgb(230, 123, 0));
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+}
+
+.divider {
+    height: 2px;
+    background: linear-gradient(90deg, rgba(135, 0, 202, 1), rgba(200, 107, 0, 1));
+    margin: 1%;
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.8em;
+}
+
+.categoriesItem {
+    z-index: 100; 
+    transition: color 0.3s ease, text-shadow 0.3s ease, box-shadow 0.3s ease; 
+    background: linear-gradient(1deg, rgb(135, 0, 202), rgb(230, 123, 0));
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+}
+
+.categoriesItem:hover {
+    color: #333;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+    transition: box-shadow 0.3s ease;
+}
+
+.categoriesItem::after {
+    text-decoration: none;
+    color: #ededed; 
+    padding: 5px;
+    display: block;
+    border-radius: 4px;
+    transition: transform 0.2s; 
+}
+
+.categoriesItem:hover::after {
+    transform: scale(1.1);
+}
+
+.sidebar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: linear-gradient(45deg, #ff6b6b, #f7d94c);
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+    z-index: 0;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.developers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: -webkit-radial-gradient(
+      center top, circle farthest-corner,
+      #FFF 0%, #D8DFE9 100%);
+    background-image: radial-gradient(
+      circle farthest-corner at center top,
+      #FFF 0%, #D8DFE9 100%);
+    overflow: hidden;
+}

@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.login-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.player-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: rgb(32, 32, 32);
+}
+
+.player-page-main {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.account-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(32, 32, 32);
+}
