@@ -9,9 +9,9 @@ export const Sidebar:React.FC = () => {
             <div className={styles.divider}></div>
             <ul className={styles.categories}>
                 <li className={styles.categoriesItem}>Все видео</li>
-                <li className={styles.categoriesItem}>Музыка</li>
-                <li className={styles.categoriesItem}>Спорт</li>
-                <li className={styles.categoriesItem}>Игры</li>
+                <li className={styles.categoriesItem}>Программирование</li>
+                <li className={styles.categoriesItem}>Дизайн</li>
+                <li className={styles.categoriesItem}>Радиоэлектроника</li>
             </ul>
             <div className={styles.developers}>
                 <div className={styles.flipCoverFirstDev}>lf</div>
